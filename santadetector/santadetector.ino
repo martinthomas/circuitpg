@@ -1,6 +1,10 @@
 #include <Adafruit_CircuitPlayground.h>
 #include <Adafruit_SleepyDog.h>
 
+//Use accelerometer to detect bumps
+//Light one side in red and the other in blue
+//Tap again to turn off
+
 #define NEIGH 25
 #define NEXT 250
 #define CLICKTHRESHHOLD 80
@@ -31,7 +35,7 @@ void setbrightness(){
 }
 
 void loop() {
-//  int sleepMS = Watchdog.sleep();
+//  int sleepMS = Watchdog.sleep();  // disabled this until we figure out how to wake up from deep sleep on an interrupt
 
   while (!CircuitPlayground.slideSwitch()) {
     // Turn off the pixels, then go into deep sleep for a second.
